@@ -1,0 +1,307 @@
+PROGRAMM ARRAY:
+
+  public static void main (String args[]){
+        int a[] =new int[5];
+        String friends[]= new String[3];
+        
+        a[0]= 10;
+        a[1]= 20;
+        
+        friends[0]= "abbey";
+        friends[2]="kevin";
+        
+        System.out.println(a[0] +"  "+a[1]);
+        System.out.println(friends[0]+"  "+friends[2]);
+
+RESULT:
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ myarray ---
+10  20
+abbey  kevin
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+
+2) NESTED LOOP
+
+public static void main(String[] args) {
+        for (int i=1; i<=4; i=i+1){
+            for (int j=1; j<=i; j=j+1) {
+                System.out.print ("*"+ " ");
+            }
+            System.out.println("");
+        }
+    }
+    
+}
+
+RESULT
+
+* 
+* * 
+* * * 
+* * * * 
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+
+
+3)
+
+public class MyFriend {
+     public static void main (String args[]){
+         String friends[] = {"tom","dave","kim","amy","mike"};
+         
+         for (int i=0; i<=4; i=i+1){
+             System.out.println(i);
+         }
+         
+     }
+    
+}
+
+4)ARRAY DEFININIG THE VALUE:
+
+public static void main (String args[]){
+         String friends[] = {"tom","dave","kim","amy","mike"};
+         
+         for (int i=0; i<=4; i=i+1){
+             System.out.println(friends[i]);
+         }
+         
+     }
+    
+}
+
+Answer:
+
+tom
+dave
+kim
+amy
+mike
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+
+5) IDENTIFYING IF THE NAME OF FRIEND EXIST ON THE LIST.
+
+ public static void main (String args[]){
+         String friends[] = {"tom","dave","kim","amy","mike"};
+         Scanner sc= new Scanner (System.in);
+         System.out.println("Enter your friend name\t");
+         String x= sc.next();
+         
+         for (int i=0; i<=4; i=i+1){
+             if (x.equalsIgnoreCase(friends [i])){
+                 System.out.println("yes, friends exist in the list");
+             }
+             
+         }
+         
+     }
+    
+}
+ANSWER:
+
+Enter your friend name	
+tom
+yes, friends exist in the list
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+
+6)identify if friend do not exist (Turn on if condition is true)
+
+ public static void main (String args[]){
+         String friends[] = {"tom","dave","kim","amy","mike"};
+         Scanner sc= new Scanner (System.in);
+         System.out.println("Enter your friend name\t");
+         String x= sc.next();
+         boolean isfriendsexist= false;
+         
+         for (int i=0; i<=4; i=i+1){
+             if (x.equalsIgnoreCase(friends [i])){
+                 System.out.println("yes, friends exist in the list");
+                 isfriendsexist= true;  //I found it 
+             }
+             
+         }
+         if (isfriendsexist ==false) {
+             System.out.println("friends does note exist in the list");
+         }
+     }
+    
+}
+ Answer:
+
+Enter your friend name	
+obama
+friends does note exist in the list
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+
+
+
+7)  FUNCTION PROGRAMMING
+
+ public static void main (String args[]){
+        //calling function
+        hello();
+        
+    }
+    static void hello(){
+        System.out.println("hello Tom");
+    }
+}
+
+ANSWER:
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ myfunction1 ---
+hello Tom
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+8) ADD function:
+
+public static void main (String args[]){
+        //calling function
+        hello();
+        add(2,3);
+        add(200, 400);
+    }
+    static void hello(){
+        System.out.println("hello Tom");
+    }
+    static void add(int x, int y){
+        int z= x+y;
+        System.out.println("z="+z);
+    }
+    
+}
+
+
+ANSWER:
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ myfunction1 ---
+hello Tom
+z=5
+z=600
+------------------------------------------------------------------------
+BUILD SUCCESS
+
+9)
+Token
+
+
+ublic class Stringtok  {
+    public static void main (String args[]){
+        
+        String data = "1,tom,tom@abc.com,222333555";
+        StringTokenizer st= new StringTokenizer (data,",");
+        while (st.hasMoreTokens()){
+            String token= (String)st.nextToken();
+            System.out.println("token="+token);
+        }
+                
+    }
+
+    
+    }
+ANSWER
+
+-- exec-maven-plugin:3.0.0:exec (default-cli) @ mystringtoken ---
+token=1
+token=tom
+token=tom@abc.com
+token=222333555
+------------------------------------------------------------------------
+
+
+
+10) MULTIPILICATION FUNCTION AND A RETURN FUNCTION:
+
+
+public static void main (String args[]){
+        //calling function
+        hello();
+        add(2,3);
+        add(200, 400);
+        int c= mul(50,60);
+        System.out.println("c="+c);
+        
+    }
+    
+    static int mul(int a, int b) {
+        return a*b;
+    }
+    static void hello(){
+        System.out.println("hello Tom");
+    }
+    static void add(int x, int y){
+        int z= x+y;
+        System.out.println("z="+z);
+    }
+    
+}
+ANSWER:
+
+hello Tom
+z=5
+z=600
+c=3000
+------------------------------------------------------------------------
+BUILD SUCCESS
+    
+
+poj0= plain,old java object 
+
+junit- one java class.
+unit testing do not need server.
+
+cc- code coverage: mean how much code i need to cover.
+test coverage:
+funtional coverage: mean user perspective.
+
+pom- project object model.
+
+pom. has dependency. all dependency are coming from the pom.
+
+it allow more coding
+it allow more extention
+
+
+capsulation: do not allow anyone to change your data. which mean Data hidden.
+
+default constructor will allow you to create a new product.
+
+
+
+custom construstor:
+
+how do i read only object: you can remove set:
+
+
+
+Frame works: means guild lines.
+
+1)page object
+2)BDD: behaviour driven development:  experience 2years its new 
+3) Selium 
+4) Junit
+
+
+1)programmy has four frame work
+
+
+
+
+a)declare variable
+b)process
+c)input
+d)object.
+
+Camel Case; this is where first letter are in small letter while the secound letter are in Capital letter. e.g  testVin.
+
+Assertion maans validation.
+
